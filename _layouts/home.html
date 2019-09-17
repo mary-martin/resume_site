@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "About Me" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        <img src="https://arpg.github.io/img/people/Martin_Mary.jpg" height=200 width=200>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">I am currently a first year PhD student at the University of Colorado - Boulder. My interests include object detection for robotic perception, along with multi-modal perception tasks. I am also a Research Assistant in the Autonomous Robotics and Perception Group (<a href="{{ "https://arpg.github.io" | relative_url }}">ARPG</a>).</p>
+  {%- endif -%}
+
+</div>
